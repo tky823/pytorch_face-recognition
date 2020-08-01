@@ -55,7 +55,7 @@ if [ ! -e "${save_dir}/log" ]; then
     mkdir -p "${save_dir}/log"
 fi
 
-time_stamp=`TZ=UTC-9 date "+%Y%m%d-%T"`
+time_stamp=`TZ=UTC-9 date "+%Y%m%d-%H%M%S"`
 
 eval_center_net.py \
 --test_image_root "${image_root}" \
