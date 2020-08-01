@@ -19,7 +19,7 @@ channels=[64,128,256,512]
 K_backbone=3
 S_backbone=1
 dilated=1
-separable=0
+separable=1
 pool_backbone='max'
 nonlinear_backbone='relu'
 
