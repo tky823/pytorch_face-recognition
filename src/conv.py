@@ -118,7 +118,7 @@ class PartialConv2d(nn.Module):
         super().__init__()
 
     def forward(self, input):
-
+        raise NotImplementedError("Sorry, I haven't implemented...")
         return output
 
 
@@ -131,5 +131,5 @@ class GatedConv2d(nn.Module):
         super().__init__()
 
     def forward(self, input):
-
+        raise NotImplementedError("Sorry, I haven't implemented...")
         return output
