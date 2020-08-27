@@ -7,7 +7,7 @@ class L1Loss(nn.Module):
     def __init__(self, eps=EPS):
         super().__init__()
         
-        self.eps = EPS
+        self.eps = eps
         
     def forward(self, input, target, pointmap, n_objects, batch_mean=True):
         """
@@ -17,7 +17,9 @@ class L1Loss(nn.Module):
             point_map: (batch_size, H, W)
             n_objects: (batch_size, )
         """
-        coeff = n_objects / (n_objects**2+EPS)
+        eps = self.eps
+        
+        coeff = n_objects / (n_objects**2+eps)
         coeff = coeff.unsqueeze(dim=1) # (batch_size, 1)
         
         loss = pointmap.unsqueeze(dim=1) * torch.abs(input-target) # (batch_size, 2, H, W)
@@ -34,7 +36,7 @@ class L2Loss(nn.Module):
     def __init__(self, eps=EPS):
         super().__init__()
         
-        self.eps = EPS
+        self.eps = eps
         
     def forward(self, input, target, pointmap, n_objects, batch_mean=True):
         """
@@ -44,7 +46,9 @@ class L2Loss(nn.Module):
             point_map: (batch_size, H, W)
             n_objects: (batch_size, )
         """
-        coeff = n_objects / (n_objects**2+EPS)
+        eps = self.eps
+        
+        coeff = n_objects / (n_objects**2+eps)
         coeff = coeff.unsqueeze(dim=1) # (batch_size, 1)
         
         loss = pointmap.unsqueeze(dim=1) * ((input-target)**2) # (batch_size, 2, H, W)
