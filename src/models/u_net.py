@@ -63,7 +63,7 @@ class UNet2d(UNetBase):
         if out_channels is None:
             channels_dec = channels[::-1]
         else:
-            channels_dec = channels[1:][::-1] + [out_channels]
+            channels_dec = channels[:0:-1] + [out_channels]
             
         _channels_dec = []
         
