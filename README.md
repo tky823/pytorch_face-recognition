@@ -28,6 +28,10 @@ If you want to resume training,
 
 You can change model configuration by changing patameters in `train.sh`.
 
+### Early stopping
+In my implementation, if the model doesn't update the best loss (= smallest) in continuous 3 epochs, the learning rate will be halved. 
+if the model doesn't in continuous 10 epochs, the training will be stopped before the training epoch reaches the number you specified.
+
 ## 2. Evaluation
 You have to set proper path in `eval.sh` for dataset.
 
