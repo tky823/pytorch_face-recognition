@@ -33,8 +33,7 @@ class UNetBase(nn.Module):
             'separable': self.separable,
             'nonlinear_enc': self.nonlinear_enc,
             'nonlinear_dec': self.nonlinear_dec,
-            'out_channels': self.out_channels,
-            'state_dict': self.state_dict()
+            'out_channels': self.out_channels
         }
         
         return package
@@ -352,6 +351,7 @@ if __name__ == '__main__':
     print(output.size())
     
     package = unet2d.get_package()
+    package['state_dict'] = unet2d.state_dict()
     model_path = "u_net.pth"
     torch.save(package, model_path)
     model = UNet2d.load_model(model_path)
