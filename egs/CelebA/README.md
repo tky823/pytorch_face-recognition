@@ -2,7 +2,7 @@
 
 
 ```
-cd ./u_net/
+cd ./unet/
 ```
 
 ## 0. Preparation
