@@ -4,7 +4,7 @@ A pytorch implementation of CenterNet based face recognition
 # Example
 
 ```
-cd ./egs/CelebA/u_net/
+cd ./egs/CelebA/unet/
 ```
 
 ## 1. Training
